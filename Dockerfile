@@ -8,6 +8,7 @@ COPY src src
 
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
+RUN ["chmod","+x","./mvnw"]
 RUN ./mvnw install -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
