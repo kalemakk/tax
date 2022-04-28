@@ -1,6 +1,5 @@
-FROM openjdk:8-jdk-alpine as build
+FROM openjdk:jdk-oraclelinux8 as build
 WORKDIR /workspace/app
-
 COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
